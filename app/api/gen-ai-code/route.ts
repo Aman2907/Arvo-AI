@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { db } from "@/lib/prisma";
 import { CREDIT_COST_PER_GENERATION } from "@/lib/constants";
 import type { Message, FileData } from "@/types/workspace";
@@ -471,7 +471,7 @@ export async function POST(request: NextRequest) {
                 // Gemini 3.5:
                 // low = faster generationi
                 thinkingConfig: {
-                  thinkingLevel: "LOW",
+                  thinkingLevel: ThinkingLevel.LOW,
                   includeThoughts: false,
                 },
               },
@@ -682,37 +682,37 @@ export async function POST(request: NextRequest) {
             await db.$transaction([
               workspaceId
                 ? db.workspace.update({
-                    where: {
-                      id: workspaceId,
-                      userId,
-                    },
+                  where: {
+                    id: workspaceId,
+                    userId,
+                  },
 
-                    data: {
-                      messages:
-                        updatedMessages as never,
+                  data: {
+                    messages:
+                      updatedMessages as never,
 
-                      fileData:
-                        newFileData as never,
-                    },
-                  })
+                    fileData:
+                      newFileData as never,
+                  },
+                })
                 : db.workspace.create({
-                    data: {
-                      userId,
+                  data: {
+                    userId,
 
-                      title:
-                        aiTitle ??
-                        lastUserMessage.content.slice(
-                          0,
-                          80
-                        ),
+                    title:
+                      aiTitle ??
+                      lastUserMessage.content.slice(
+                        0,
+                        80
+                      ),
 
-                      messages:
-                        updatedMessages as never,
+                    messages:
+                      updatedMessages as never,
 
-                      fileData:
-                        newFileData as never,
-                    },
-                  }),
+                    fileData:
+                      newFileData as never,
+                  },
+                }),
 
               db.user.update({
                 where: {
@@ -764,7 +764,7 @@ export async function POST(request: NextRequest) {
               creditsRemaining:
                 updatedUser?.credits ??
                 user.credits -
-                  CREDIT_COST_PER_GENERATION,
+                CREDIT_COST_PER_GENERATION,
             })
           );
         } catch (err) {
