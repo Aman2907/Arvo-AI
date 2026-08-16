@@ -21,10 +21,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Forge - AI App Builder",
+  title: "Arvo - AI App Builder",
   description: "",
   icons: {
-    icon: "/logo-short.jpeg",
+    icon: "/arvo2.png",
   },
 };
 

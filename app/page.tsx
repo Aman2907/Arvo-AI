@@ -93,7 +93,7 @@ export default function Home() {
         </Badge>
 
         <h1 className="mx-auto max-w-3xl text-balance font-serif text-5xl leading-tight tracking-tight sm:text-6xl lg:text-7xl z-10">
-          <GrayTitle>Zeno AI your dream</GrayTitle>
+          <GrayTitle>Arvo AI your dream</GrayTitle>
           <br />
           <BlueTitle>from a single prompt.</BlueTitle>
         </h1>
@@ -612,9 +612,45 @@ export default function Home() {
         </section>
       </section>
 
-      <footer className="relative z-10 border-t border-white/7 py-12 mx-auto px-6 flex flex-wrap items-center justify-center text-stone-400">
-        Made with ❤️ by Aman
-      </footer>
+       
+
+
+
+       <footer className="relative z-10 overflow-hidden border-t border-white/10 px-6 py-10">
+  {/* Background glow */}
+  <div className="pointer-events-none absolute left-1/2 top-0 h-32 w-96 -translate-x-1/2 rounded-full bg-purple-500/10 blur-3xl" />
+
+  <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 text-center">
+    
+    {/* Brand */}
+    <div className="flex items-center gap-2">
+      <span className="text-sm font-semibold text-white/80">
+        Arvo
+      </span>
+
+      <span className="rounded-md bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+        AI
+      </span>
+    </div>
+
+    {/* Made with */}
+    <p className="flex items-center gap-1.5 text-sm text-white/40">
+      Made with
+      <span className="inline-block animate-pulse text-red-400">
+        ❤️
+      </span>
+      by
+      <span className="font-medium text-white/70 transition-colors hover:text-purple-400">
+        Aman
+      </span>
+    </p>
+
+    {/* Copyright */}
+    <p className="text-[11px] text-white/20">
+      © {new Date().getFullYear()} Arvo AI. All rights reserved.
+    </p>
+  </div>
+</footer>
     </main>
   );
 }
