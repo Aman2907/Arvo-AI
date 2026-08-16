@@ -579,10 +579,7 @@ export default function Home() {
         {/* ── CTA ───────────────────────────────────────────────────────────── */}
         <section className="relative mx-auto mb-32 max-w-5xl overflow-hidden rounded-2xl border border-white/8 px-10 py-24 text-center">
           <HexagonBackground
-            // strokeColor="rgba(255,255,255,0.05)" // blur
-            numberOfLines={36}
-            numberOfDiscs={36}
-            particleRGBColor={[147, 197, 253]}
+         
             className="absolute inset-0 h-full w-full"
             style={{
               maskImage:

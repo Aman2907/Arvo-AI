@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { PricingModal } from "@/components/PricingModal";
 import type { Message, StatusStep } from "@/types/workspace";
 import { createClient } from "@supabase/supabase-js";
-import { BlueTitle } from "./reusables";
+import { BlueTitle, GrayTitle } from "@/components/reusables";
 import Image from "next/image";
 
 const supabase = createClient(
