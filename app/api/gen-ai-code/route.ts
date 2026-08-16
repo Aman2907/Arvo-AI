@@ -469,9 +469,9 @@ export async function POST(request: NextRequest) {
                   "application/json",
 
                 // Gemini 3.5:
-                // low = faster generation
+                // low = faster generationi
                 thinkingConfig: {
-                  thinkingLevel: "low",
+                  thinkingLevel: "LOW",
                   includeThoughts: false,
                 },
               },
