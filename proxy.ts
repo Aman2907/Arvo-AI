@@ -2,7 +2,6 @@ import { clerkMiddleware , createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/dist/server/web/spec-extension/response";
 import arcjet, { detectBot, shield } from "@arcjet/next";
 
-
  
 const isProtectedRoute = createRouteMatcher([
   "/workspace(.*)",
